@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/server";
+import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
@@ -25,9 +25,7 @@ export default async function og({
           gap: "32px",
         }}
       >
-        <div style={{ display: "flex" }}>
-          slug={slug}
-        </div>
+        <div style={{ display: "flex" }}>slug={slug}</div>
       </div>
     ),
     {}
