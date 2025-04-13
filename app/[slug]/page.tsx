@@ -2,11 +2,12 @@ import Link from "next/link";
 import ShowOpenGraphImage from "./ShowOpenGraphImage";
 
 /** Add your relevant code here for the issue to reproduce */
-export default function Home({
-  params: { slug },
+export default async function Home({
+  params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   const expectedOpenGraphImageUrl = `/${slug}/opengraph-image`;
   return (
     <div>

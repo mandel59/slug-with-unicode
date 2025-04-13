@@ -5,10 +5,11 @@ export const runtime = "edge";
 export const revalidate = 10;
 
 export default async function og({
-  params: { slug },
+  params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   // const slugDecoded = decodeURIComponent(slug);
   return new ImageResponse(
     (
